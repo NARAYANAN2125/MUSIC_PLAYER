@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="music-player">
+        <h1 class="player-title">Music Player</h1>
+        <div class="song-info">
+            <h2 class="song-title">Song Title</h2>
+            <p class="artist">Artist Name</p>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="time-info">
+                <span class="current-time">0:00</span>
+                <span class="duration">0:00</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-wrapper">
+                <button class="control-btn" id="prev">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <span class="tooltip prev-tooltip">Previous</span>
+            </div>
+            <div class="control-wrapper">
+                <button class="control-btn" id="play">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+            <div class="control-wrapper">
+                <button class="control-btn" id="next">
+                    <i class="fas fa-forward"></i>
+                </button>
+                <span class="tooltip next-tooltip">Next</span>
+            </div>
+        </div>
+
+        <div class="volume-container">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" class="volume-slider" min="0" max="100" value="100">
+        </div>
+
+        <div class="file-input-container">
+            <label for="music-file" class="file-input-label">
+                <i class="fas fa-folder-open"></i> Add Music Folder
+            </label>
+            <input type="file" id="music-file" webkitdirectory directory multiple hidden>
+        </div>
+
+        <button class="playlist-btn" id="show-playlist">
+            <i class="fas fa-list"></i> Show Playlist
+        </button>
+    </div>
+
+    <div class="modal" id="playlist-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Playlist</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search songs...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <ul id="playlist-items"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
